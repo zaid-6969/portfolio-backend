@@ -9,6 +9,7 @@ const app = express();
 app.use(express.json());
 
 const allowedOrigins = [
+  "https://portfolio-backend-livid-eight.vercel.app",
   "http://localhost:5173",
   "http://localhost:3000",
 ];
