@@ -11,7 +11,7 @@ app.use(express.json());
 const allowedOrigins = [
   "https://portfolio-backend-vyl5.onrender.com/",
   // "https://portfolio-backend-livid-eight.vercel.app",
-  "https://portfolio-chi-virid-10.vercel.app/",
+  "https://portfolio-chi-virid-10.vercel.app",
   "http://localhost:5173",
   "http://localhost:3000",
 ];
