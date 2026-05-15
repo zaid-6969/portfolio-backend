@@ -2,82 +2,53 @@ import mongoose from "mongoose";
 
 const projectSchema = new mongoose.Schema(
   {
-    projectName: {
-      type: String,
-      required: true,
-    },
-
-    description: {
-      type: String,
-      required: true,
-    },
-
-    image: {
-      type: String,
-      required: true,
-    },
-
-    githubLink: {
-      type: String,
-    },
-
-    deploymentLink: {
-      type: String,
-    },
-
+    projectName: { type: String, required: true },
+    description: { type: String, required: true },
+    image: { type: String, required: true },
+    githubLink: { type: String },
+    deploymentLink: { type: String },
     languages: [String],
-
     tags: [String],
-
-    createdBy: {
-      type: String,
-      default: "Admin",
-    },
+    createdBy: { type: String, default: "Admin" },
 
     designConfig: {
-      backgroundColor: {
-        type: String,
-        default: "#ffffff",
-      },
+      // Colors
+      backgroundColor:  { type: String, default: "#0f172a" },
+      textColor:        { type: String, default: "#e2e8f0" },
+      buttonColor:      { type: String, default: "#6366f1" },
+      buttonTextColor:  { type: String, default: "#ffffff" },
+      tagColor:         { type: String, default: "#6366f1" },
 
-      textColor: {
-        type: String,
-        default: "#000000",
-      },
+      // Title typography
+      titleFontSize:    { type: String, default: "2rem" },
+      titleFontWeight:  { type: String, default: "800" },
+      titleFontFamily:  { type: String, default: "Syne, sans-serif" },
 
-      fontSize: {
-        type: String,
-        default: "16px",
-      },
+      // Description typography
+      descFontSize:     { type: String, default: "1rem" },
+      descFontFamily:   { type: String, default: "DM Sans, sans-serif" },
+      descFontWeight:   { type: String, default: "400" },
 
-      borderRadius: {
-        type: String,
-        default: "10px",
-      },
+      // Tags
+      tagFontSize:      { type: String, default: "0.75rem" },
 
-      boxShadow: {
-        type: String,
-        default: "0px 4px 10px rgba(0,0,0,0.1)",
-      },
+      // Layout
+      borderRadius:     { type: String, default: "16px" },
+      boxShadow:        { type: String, default: "0px 20px 60px rgba(0,0,0,0.4)" },
+      border:           { type: String, default: "1px solid rgba(255,255,255,0.08)" },
+      padding:          { type: String, default: "32px" },
 
-      border: {
-        type: String,
-        default: "none",
-      },
+      // Image
+      imageSize:        { type: String, default: "full" },    // full|large|medium|small|hidden
+      imagePosition:    { type: String, default: "top" },     // top|bottom|left|right
+      imageHeight:      { type: String, default: "400" },
 
-      padding: {
-        type: String,
-        default: "20px",
-      },
-
-      cardWidth: {
-        type: String,
-        default: "100%",
-      },
+      // Legacy compat
+      fontSize:         { type: String, default: "16px" },
+      accentColor:      { type: String, default: "#6366f1" },
     },
   },
-  {
-    timestamps: true,
-  },
+  { timestamps: true }
 );
+
 export default mongoose.model("Project", projectSchema);
